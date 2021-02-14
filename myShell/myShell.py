@@ -19,7 +19,8 @@ def execute(args):
                 os.chdir("..")
             else: #other directory
                 os.chdir(args[1])
-        except: #file directory does
+        except: #file directory does not exist
+            os.write(1, ("cd %s: Directory does not exists") %arg[1].encode())
             pass
     else:
         rc = os.fork()
