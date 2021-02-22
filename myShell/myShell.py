@@ -93,7 +93,7 @@ def redirect(args):
             os.execve(program,args,os.environ)
         except FileNotFoundError:
             pass
-    os.write(2, ("%s: Command not found \n" % args[0]).encode())
+    os.write(2, ("Could not execute %s\n" % args[0]).encode())
     sys.exit(1)
 
 #pipe
@@ -150,7 +150,7 @@ def command(args):
                 os.execve(program, args, os.environ)
             except FileNotFoundError:
                 pass
-    os.write(2, ("%s: Command not found\n" % args[0]).encode())
+    os.write(2, ("Could not execute %s\n" % args[0]).encode())
     sys.exit(1)
 
 #main shell
