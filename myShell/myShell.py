@@ -94,7 +94,7 @@ def redirect(args):
         except FileNotFoundError:
             pass
     os.write(2, ("%s: Command not found \n" % args[0]).encode())
-    sys.exit(0)
+    sys.exit(1)
 
 #pipe
 def pipe(args):
@@ -151,7 +151,7 @@ def command(args):
             except FileNotFoundError:
                 pass
     os.write(2, ("%s: Command not found\n" % args[0]).encode())
-    sys.exit(0)
+    sys.exit(1)
 
 #main shell
 while True:
